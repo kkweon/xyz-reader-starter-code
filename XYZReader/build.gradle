@@ -7,7 +7,13 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
+
+preBuild.dependsOn 'spotlessApply'
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -17,5 +23,8 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.squareup.okhttp3:okhttp:4.5.0'
+
+    def material_version = '1.1.0'
+    implementation "com.google.android.material:material:$material_version"
     implementation files('libs/volley.jar')
 }

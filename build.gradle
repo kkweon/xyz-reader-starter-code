@@ -7,19 +7,37 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.28.1"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+plugins {
+    id "com.diffplug.gradle.spotless" version "3.28.1"
+}
+
+spotless {
+    format 'misc', {
+        target '**/*.gradle', '**/*.md', '**/.gitignore'
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    java {
+        target '**/*.java'
+        removeUnusedImports() // removes any unused imports
+        googleJavaFormat('1.1').aosp()
+    }
+}
+
 allprojects {
+    apply plugin: "com.diffplug.gradle.spotless"
+
     repositories {
         google()
         jcenter()
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
