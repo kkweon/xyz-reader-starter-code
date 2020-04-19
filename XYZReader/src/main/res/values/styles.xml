@@ -17,10 +17,13 @@
 
 <resources>
 
+    <!-- In this app, the action bar is customized instead of using the default one.
+    Hence, it extends the NoActionBar style. -->
     <style name="MyTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="materialCardViewStyle">@style/MyCardView</item>
     </style>
 
+    <!-- MyCardView extends the bast material card view -->
     <style name="MyCardView" parent="Widget.MaterialComponents.CardView">
         <item name="cardElevation">8dp</item>
         <item name="android:layout_height">230dp</item>
