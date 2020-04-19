@@ -28,3 +28,7 @@ dependencies {
     implementation "com.google.android.material:material:$material_version"
     implementation files('libs/volley.jar')
 }
+
+task testAll(dependsOn: ['test', 'connectedAndroidTest']) {
+    description = "Run all tests"
+}
