@@ -1,7 +1,9 @@
 <!-- This is a second activity that displays one article details. -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"
@@ -19,6 +21,7 @@
             android:layout_width="56dp"
             android:layout_height="?actionBarSize"
             android:background="?selectableItemBackgroundBorderless"
+            tools:background="#000"
             android:contentDescription="@string/up"
             android:src="@drawable/ic_arrow_back" />
     </FrameLayout>

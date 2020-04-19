@@ -24,14 +24,14 @@
                 <ImageView
                     android:id="@+id/photo"
                     android:layout_width="match_parent"
-                    android:scaleType="fitXY"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY" />
 
                 <!-- scrim -->
                 <View
-                    android:background="@drawable/scrim"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:background="@drawable/scrim" />
 
             </FrameLayout>
 
@@ -51,7 +51,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
-                    android:background="#333"
                     android:orientation="vertical"
                     android:paddingLeft="@dimen/detail_inner_horiz_margin"
                     android:paddingTop="@dimen/detail_metabar_vert_padding"
@@ -64,16 +63,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-                        android:textColor="#fff"
-                         />
+                        android:textColor="@android:color/white"
+                        tools:text="Article Name" />
 
                     <TextView
                         android:id="@+id/article_byline"
                         style="?textAppearanceSubtitle1"
                         android:layout_width="wrap_content"
-                        tools:text="May 1, 1953 by Phillip K. Dick"
                         android:layout_height="wrap_content"
-                        android:textColor="#8fff" />
+                        android:textColor="@android:color/white"
+                        tools:text="May 1, 1953 by Phillip K. Dick" />
                 </LinearLayout>
 
                 <TextView
@@ -85,18 +84,20 @@
                     android:layout_marginRight="@dimen/detail_inner_horiz_margin"
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
                     android:paddingBottom="@dimen/detail_body_bottom_margin"
-                    android:textSize="@dimen/detail_body_text_size" />
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="@dimen/detail_body_text_size"
+                    tools:text="@tools:sample/lorem/random" />
 
             </com.example.xyzreader.ui.MaxWidthLinearLayout>
         </FrameLayout>
     </com.example.xyzreader.ui.ObservableScrollView>
 
-    <ImageButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/share_fab"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_gravity="bottom|end"
-        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"
         android:background="@drawable/add_fab_background"
         android:contentDescription="@string/action_share"

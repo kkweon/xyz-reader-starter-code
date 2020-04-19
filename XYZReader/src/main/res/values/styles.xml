@@ -24,6 +24,9 @@
     Bridge themes inherit from AppCompat themes, but also define the new Material Components theme attributes.
     -->
     <style name="MyTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <item name="colorPrimary">@color/MyPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/MyPrimaryDarkColor</item>
+        <item name="colorSecondary">@color/MySecondaryColor</item>
         <item name="cardViewStyle">@style/MyCardView</item>
     </style>
 

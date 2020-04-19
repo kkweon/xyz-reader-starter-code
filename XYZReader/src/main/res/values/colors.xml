@@ -17,4 +17,13 @@
 
 <resources>
     <color name="photo_placeholder">#ccc</color>
+
+    <color name="MyPrimaryColor">#795548</color>
+    <color name="MyPrimaryLightColor">#a98274</color>
+    <color name="MyPrimaryDarkColor">#4b2c20</color>
+    <color name="MySecondaryColor">#4527a0</color>
+    <color name="MySecondaryLightColor">#7953d2</color>
+    <color name="MySecondaryDarkColor">#000070</color>
+    <color name="MyPrimaryTextColor">#ffffff</color>
+    <color name="MySecondaryTextColor">#ffffff</color>
 </resources>
