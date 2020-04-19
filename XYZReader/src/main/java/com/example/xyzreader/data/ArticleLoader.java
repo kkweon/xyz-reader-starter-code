@@ -1,12 +1,11 @@
 package com.example.xyzreader.data;
 
 import android.content.Context;
-import android.content.CursorLoader;
 import android.net.Uri;
 
-/**
- * Helper for loading a list of articles or a single article.
- */
+import androidx.loader.content.CursorLoader;
+
+/** Helper for loading a list of articles or a single article. */
 public class ArticleLoader extends CursorLoader {
     public static ArticleLoader newAllArticlesInstance(Context context) {
         return new ArticleLoader(context, ItemsContract.Items.buildDirUri());
@@ -22,14 +21,14 @@ public class ArticleLoader extends CursorLoader {
 
     public interface Query {
         String[] PROJECTION = {
-                ItemsContract.Items._ID,
-                ItemsContract.Items.TITLE,
-                ItemsContract.Items.PUBLISHED_DATE,
-                ItemsContract.Items.AUTHOR,
-                ItemsContract.Items.THUMB_URL,
-                ItemsContract.Items.PHOTO_URL,
-                ItemsContract.Items.ASPECT_RATIO,
-                ItemsContract.Items.BODY,
+            ItemsContract.Items._ID,
+            ItemsContract.Items.TITLE,
+            ItemsContract.Items.PUBLISHED_DATE,
+            ItemsContract.Items.AUTHOR,
+            ItemsContract.Items.THUMB_URL,
+            ItemsContract.Items.PHOTO_URL,
+            ItemsContract.Items.ASPECT_RATIO,
+            ItemsContract.Items.BODY,
         };
 
         int _ID = 0;
