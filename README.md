@@ -2,11 +2,27 @@
 
 ## Main page
 
-![main image](./assets/main.png)
-![main scrolled image](./assets/main_scrolled.png)
-
+<table>
+<thead>
+<tr>
+<th>Main</th>
+<th>Main Scroll</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="main image" src="./assets/main.png"></td>
+<td><img alt="main scroll" src="./assets/main_scrolled.png"></td>
+</tr>
+</tbody>
+</table>
 
 ## Detail page
 
-![page detail](./assets/page_detail.png)
-![page side scroll](./assets/page_side_scroll.opt.gif)
+<table>
+<thead><tr><th>Detail View</th><th>Detail View in GIF</th></tr></thead>
+<tbody><tr>
+<td><img src="./assets/page_detail.png" width="430" height="765"></td>
+<td><img src="./assets/page_side_scroll.opt.gif" width="430" height="765"></td>
+</tr></tbody>
+</table>
