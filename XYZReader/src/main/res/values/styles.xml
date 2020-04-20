@@ -33,7 +33,6 @@
     <!-- MyCardView extends the bast material card view -->
     <style name="MyCardView" parent="Widget.MaterialComponents.CardView">
         <item name="cardElevation">8dp</item>
-        <item name="android:layout_height">230dp</item>
     </style>
 
 </resources>

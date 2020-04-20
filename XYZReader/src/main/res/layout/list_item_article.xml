@@ -1,13 +1,14 @@
 <!-- This CardView represents one article in the list view. -->
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginLeft="4dp"
-    android:layout_marginRight="4dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp"
     style="@style/MyCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginBottom="4dp"
     android:clickable="true"
     android:focusable="true">
 
@@ -20,33 +21,33 @@
         <com.example.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
-            android:scaleType="centerCrop"
             android:layout_height="0dp"
-            android:background="@color/photo_placeholder" />
+            android:background="@color/photo_placeholder"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/article_title"
+            style="?attr/textAppearanceBody1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="?attr/textAppearanceBody1"
-            tools:text="Headline Title"
+            android:ellipsize="end"
+            android:maxLines="4"
             android:paddingLeft="16dp"
             android:paddingTop="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="4dp"
-            android:ellipsize="end"
-            android:maxLines="4" />
+            tools:text="Headline Title" />
 
         <TextView
             android:id="@+id/article_subtitle"
             style="?attr/textAppearanceBody2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:paddingBottom="16dp"
-            android:maxLines="2"
-            android:ellipsize="end" />
+            android:paddingBottom="16dp" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

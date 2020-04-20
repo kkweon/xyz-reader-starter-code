@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -91,7 +92,7 @@ public class ArticleListActivity extends AppCompatActivity
         adapter.setHasStableIds(true);
         mActivityArticleListBinding.recyclerView.setAdapter(adapter);
         int columnCount = getResources().getInteger(R.integer.list_column_count);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, columnCount);
+        RecyclerView.LayoutManager layoutManager = new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
         mActivityArticleListBinding.recyclerView.setLayoutManager(layoutManager);
 
         // Hide the refresh icon.
@@ -128,7 +129,8 @@ public class ArticleListActivity extends AppCompatActivity
         setContentView(mActivityArticleListBinding.getRoot());
         setSupportActionBar(mActivityArticleListBinding.toolbar);
 
-        LoaderManager.getInstance(this).initLoader(0, null, this);
+        LoaderManager.getInstance(this)
+                     .initLoader(0, null, this);
 
         if (savedInstanceState == null) {
             refresh();
@@ -220,11 +222,11 @@ public class ArticleListActivity extends AppCompatActivity
                 holder.subtitleView.setText(
                         Html.fromHtml(
                                 DateUtils.getRelativeTimeSpanString(
-                                                        publishedDate.getTime(),
-                                                        System.currentTimeMillis(),
-                                                        DateUtils.HOUR_IN_MILLIS,
-                                                        DateUtils.FORMAT_ABBREV_ALL)
-                                                .toString()
+                                        publishedDate.getTime(),
+                                        System.currentTimeMillis(),
+                                        DateUtils.HOUR_IN_MILLIS,
+                                        DateUtils.FORMAT_ABBREV_ALL)
+                                         .toString()
                                         + "<br/>"
                                         + " by "
                                         + mCursor.getString(ArticleLoader.Query.AUTHOR)));
@@ -238,7 +240,8 @@ public class ArticleListActivity extends AppCompatActivity
             }
             holder.thumbnailView.setImageUrl(
                     mCursor.getString(ArticleLoader.Query.THUMB_URL),
-                    ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
+                    ImageLoaderHelper.getInstance(ArticleListActivity.this)
+                                     .getImageLoader());
             holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
         }
 
