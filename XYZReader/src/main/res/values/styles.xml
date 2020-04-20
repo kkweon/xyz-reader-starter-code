@@ -27,12 +27,14 @@
         <item name="colorPrimary">@color/MyPrimaryColor</item>
         <item name="colorPrimaryDark">@color/MyPrimaryDarkColor</item>
         <item name="colorSecondary">@color/MySecondaryColor</item>
+        <!-- For AppCompat -->
+        <item name="colorAccent">@color/MySecondaryColor</item>
         <item name="cardViewStyle">@style/MyCardView</item>
     </style>
 
     <!-- MyCardView extends the bast material card view -->
     <style name="MyCardView" parent="Widget.MaterialComponents.CardView">
-        <item name="cardElevation">8dp</item>
+        <item name="cardElevation">1dp</item>
     </style>
 
 </resources>
